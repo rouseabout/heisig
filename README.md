@@ -9,7 +9,7 @@ This project provides:
 
 2) Tools to convert the database into useful formats, namely:
    * [Pleco Chinese Dictionary](http://www.pleco.com/) user dictionary;
-   * tab-delimetered text, suitable for [Anki](http://ankisrs.net/) and [Ankidroid](<https://github.com/ankidroid>) flash card programs; and
+   * tab-delimited text, suitable for [Anki](http://ankisrs.net/) and [Ankidroid](<https://github.com/ankidroid>) flash card programs; and
    * single HTML page, useful for debugging.
 
 
