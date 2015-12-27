@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="document">
+		<xs:complexType mixed="false">
+			<xs:sequence>
+				<xs:element name="book" type="book" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="index" type="index" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="title" type="xs:string" use="required"/>
+			<xs:attribute name="author" type="xs:string" use="required"/>
+			<xs:attribute name="publisher" type="xs:string" use="required"/>
+			<xs:attribute name="address" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="isbn">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(978|979)-[0-9]{1,5}-[0-9]{1,7}-[0-9]{1,7}-[0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="book" mixed="false">
+		<xs:sequence>
+			<xs:element name="introduction" type="section" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="lesson" type="numbered-section" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="compounds" type="section" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="postscript" type="numbered-section" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="blurb" type="section" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="date" type="xs:string" use="optional"/>
+		<xs:attribute name="isbn" type="isbn" use="optional"/>
+		<xs:attribute name="lcc" type="xs:string" use="optional"/>
+		<xs:attribute name="ddc" type="xs:string" use="optional"/>
+	</xs:complexType>
+
+	<xs:complexType name="section" mixed="false">
+		<xs:sequence>
+			<xs:element name="page" type="page" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="numbered-section" mixed="false">
+		<xs:sequence>
+			<xs:element name="page" type="page" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="index" mixed="false">
+		<xs:sequence>
+			<xs:element name="text" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:choice minOccurs="1" maxOccurs="1">
+			<xs:element name="index-character-by-frame"/>
+				<xs:element name="index-primitive-by-stroke"/>
+				<xs:element name="index-character-by-stroke"/>
+				<xs:element name="index-pinyin"/>
+				<xs:element name="index-keyword"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="title" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="page" mixed="false">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="text" type="text"/>
+				<xs:element name="frame" type="frame"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="text" mixed="false">
+		<xs:sequence>
+			<xs:element name="p" type="p-text" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="frame" abstract="true">
+		<xs:attribute name="character" type="xs:string" use="required"/>
+		<xs:attribute name="keyword" type="xs:string" use="required"/>
+		<xs:attribute name="pos" type="xs:string" use="optional"/>
+	</xs:complexType>
+
+	<xs:complexType name="primitive" mixed="false">
+		<xs:complexContent>
+			<xs:extension base="frame">
+				<xs:sequence>
+					<xs:element name="strokes" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="p" type="p-frame" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="primitive" minOccurs="0" maxOccurs="1">
+						<xs:complexType mixed="false">
+							<xs:sequence>
+								<xs:element name="p" type="p-frame" minOccurs="1" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="original" type="xs:positiveInteger" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="character" mixed="false">
+		<xs:complexContent>
+			<xs:extension base="frame">
+				<xs:sequence>
+					<xs:element name="strokes" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="p" type="p-frame" minOccurs="1" maxOccurs="unbounded"/>
+					<xs:element name="primitive" minOccurs="0" maxOccurs="1">
+						<xs:complexType mixed="false">
+							<xs:sequence>
+								<xs:element name="p" type="p-frame" minOccurs="1" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="number" type="xs:positiveInteger" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:group name="p-common">
+		<xs:choice>
+			<xs:element name="em"/>
+			<xs:element name="i"/>
+			<xs:element name="cite" type="citation"/>
+			<xs:element name="variant"/>
+			<xs:element name="info-page"/>
+			<xs:element name="cite-page"/>
+			<xs:element name="cite-book"/>
+			<xs:element name="cite-index"/>
+			<xs:element name="cite-lesson"/>
+			<xs:element name="www"/>
+		</xs:choice>
+	</xs:group>
+
+	<xs:complexType name="p-text" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:group ref="p-common"/>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="p-frame" mixed="true">
+		<xs:sequence>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:group ref="p-common"/>
+				<xs:element name="info" type="citation"/>
+				<xs:element name="self" type="self"/>
+				<xs:element name="pself" type="self"/>
+			</xs:choice>
+			<xs:element name="count" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="self" mixed="true">
+		<xs:attribute name="keyword" type="xs:string" use="optional"/>
+	</xs:complexType>
+
+	<xs:complexType name="citation" mixed="true">
+		<xs:attribute name="keyword" type="xs:string" use="optional"/>
+		<xs:attribute name="type" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="character" />
+					<xs:enumeration value="primitive" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>
