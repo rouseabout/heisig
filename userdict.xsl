@@ -9,7 +9,7 @@
 	<!ENTITY pleco-underline-close "&#xEAB7;">
 	<!ENTITY pleco-link-open "&#xEAB8;">
 	<!--
-	Note, when there are only puctuation characters between 'pleco-link-close'
+	Note, when there are only punctuation characters between 'pleco-link-close'
 	and the next 'pleco-italic-open', Pleco ignores the italic command.
 	Solution: place a zero-width-space character (0x200B) immediately after
 	'pleco-link-close' command. Tested with Pleco 3.2.23/Android. -->

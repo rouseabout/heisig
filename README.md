@@ -120,7 +120,7 @@ Known limitations
 
 * When executed with the default JDK XML parser, Saxon chokes on the following characters.
   To avoid this problem, the affected characters are defined inline using ampersand notation.
-  A more robust solution involves configuring Saxon to use an alternate XML parsers, see <http://www.saxonica.com/html/documentation/sourcedocs/controlling-parsing.html>.
+  A more robust solution involves configuring Saxon to use an alternate XML parser, see <http://www.saxonica.com/html/documentation/sourcedocs/controlling-parsing.html>.
 
 | Character | Ampersand notation
 |-----------|-------------------
