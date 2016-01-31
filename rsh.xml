@@ -11282,7 +11282,7 @@
 
 <frame xsi:type="character" number="1639" character="哼" keyword="hum" pos="v.">
 <strokes>10</strokes>
-<p><cite>mouth</cite> ... <cite>smooth</cite>. <count/></p>
+<p><cite>mouth</cite> ... <cite>go smoothly</cite>. <count/></p>
 </frame>
 
 </page>
@@ -11694,7 +11694,7 @@
 
 <frame xsi:type="character" number="1703" character="顷" keyword="100 Chinese acres">
 <strokes>8</strokes>
-<p><cite type="primitive">spoon</cite> ... <cite type="primitive">head</cite>. <info keyword="Chinese acre"/><count/></p>
+<p><cite>diced</cite> ... <cite type="primitive">head</cite>. <info keyword="Chinese acre"/><count/></p>
 </frame>
 
 <frame xsi:type="character" number="1704" character="匙" keyword="spoon" pos="n.">
