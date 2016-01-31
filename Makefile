@@ -28,7 +28,7 @@ release: heisig-release.zip
 clean:
 	rm -f rsh-pleco.txt rsh-pleco-pinyin.txt rsh.html rsh-table.txt heisig-release.zip
 
-table.xsl: util.xsl reading.xml traditional.xml measure.xml surname.xml
+table.xsl: util.xsl reading.xml traditional.xml measure.xml surname.xml exclamative.xml
 ebook.xsl: util.xsl reading.xml
 html.xsl: ebook.xsl
 userdict.xsl: ebook.xsl

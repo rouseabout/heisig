@@ -7,12 +7,13 @@
 <xsl:variable name="reading" select="document('reading.xml')"/>
 <xsl:variable name="measure" select="document('measure.xml')"/>
 <xsl:variable name="surname" select="document('surname.xml')"/>
+<xsl:variable name="exclamative" select="document('exclamative.xml')"/>
 <xsl:variable name="traditional" select="document('traditional.xml')"/>
 
 <xsl:output method="text" encoding="utf-8"/>
 
 <xsl:template match="/">
-	<xsl:text>#Character&sep;Keyword&sep;Alternate keywords&sep;Components&sep;Stroke count&sep;Heisig number&sep;Lesson number&sep;Book/page number&sep;Pinyin&sep;Pinyin audio&sep;Jyutping&sep;Jyutping audio&sep;Traditional&sep;Measure word&sep;Surname&#xa;</xsl:text>
+	<xsl:text>#Character&sep;Keyword&sep;Alternate keywords&sep;Components&sep;Stroke count&sep;Heisig number&sep;Lesson number&sep;Book/page number&sep;Pinyin&sep;Pinyin audio&sep;Jyutping&sep;Jyutping audio&sep;Traditional&sep;Measure word&sep;Surname&sep;Exclamative&#xa;</xsl:text>
 	<xsl:apply-templates select="//frame[@number &lt;= 50000]"/>
 </xsl:template>
 
@@ -43,7 +44,8 @@
 	</xsl:if>
 	<xsl:apply-templates select="$traditional/dict/entry[@simplified=$character]" mode="traditional"/><xsl:text>&sep;</xsl:text>
 	<xsl:if test="$measure/dict/entry[@simplified=$character]"><xsl:text>M</xsl:text></xsl:if><xsl:text>&sep;</xsl:text>
-	<xsl:if test="$surname/dict/entry[@simplified=$character]"><xsl:text>S</xsl:text></xsl:if>
+	<xsl:if test="$surname/dict/entry[@simplified=$character]"><xsl:text>S</xsl:text></xsl:if><xsl:text>&sep;</xsl:text>
+	<xsl:if test="$exclamative/dict/entry[@simplified=$character]"><xsl:text>E</xsl:text></xsl:if>
 	<xsl:text>&#xa;</xsl:text>
 </xsl:template>
 

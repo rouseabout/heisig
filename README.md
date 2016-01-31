@@ -102,6 +102,7 @@ File list
 | traditional.xml | simplified-to-traditional character lookup table
 | measure.xml     | Measure words
 | surname.xml     | Common surnames
+| exclamative.xml | Exclamative particles
 
 
 Known limitations
