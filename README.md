@@ -89,6 +89,7 @@ File list
 | Name            | Description
 |-----------------|------------
 | README.md       | documentation
+| ERRORS.md       | list of hard copy book errors
 | LICENSE         | license
 | rsh.xml         | database
 | heisig.xsd      | schema
