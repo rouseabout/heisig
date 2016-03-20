@@ -26,7 +26,7 @@
 	<!ENTITY pleco-size-close "&#xEAC6;">
 	<!ENTITY pleco-hr "&#xEAC7;"><!-- followed by four characters (Pleco 3.2.26/Android) -->
 ]>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 	<xsl:param name="config-pinyin" select="config-pinyin"/>
 
@@ -183,6 +183,20 @@
 		<xsl:text>&pleco-link-open;</xsl:text>
 		<xsl:value-of select="$headword"/>
 		<xsl:text>&pleco-link-close;</xsl:text>
+	</xsl:template>
+
+	<xsl:template name="out-color">
+		<xsl:param name="r"/>
+		<xsl:param name="g"/>
+		<xsl:param name="b"/>
+		<xsl:param name="text"/>
+		<xsl:text>&pleco-color-open;</xsl:text>
+		<xsl:value-of select="codepoints-to-string(60416 + 0)"/>
+		<xsl:value-of select="codepoints-to-string(60416 + xs:integer($r))"/>
+		<xsl:value-of select="codepoints-to-string(60416 + xs:integer($g))"/>
+		<xsl:value-of select="codepoints-to-string(60416 + xs:integer($b))"/>
+		<xsl:value-of select="$text"/>
+		<xsl:text>&pleco-color-close;</xsl:text>
 	</xsl:template>
 
 </xsl:stylesheet>
