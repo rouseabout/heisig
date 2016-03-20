@@ -18,13 +18,13 @@
 	<!ENTITY pleco-invert-close "&#xEABD;">
 	<!ENTITY pleco-altfont-open "&#xEABE;">
 	<!ENTITY pleco-altfont-close "&#xEABF;">
-	<!ENTITY pleco-color-open "&#xEAC1;"><!-- followed by two octet parameters -->
+	<!ENTITY pleco-color-open "&#xEAC1;"><!-- followed by four characters (Pleco 3.2.26/Android) -->
 	<!ENTITY pleco-color-close "&#xEAC2;">
-	<!ENTITY pleco-block-open "&#xEAC3;"><!-- followed by two octet parameters -->
+	<!ENTITY pleco-block-open "&#xEAC3;"><!-- followed by four characters (Pleco 3.2.26/Android) -->
 	<!ENTITY pleco-block-close "&#xEAC4;">
-	<!ENTITY pleco-size-open "&#xEAC5;"><!-- followed by two octet parameters (font size, unknown) -->
+	<!ENTITY pleco-size-open "&#xEAC5;"><!-- followed by four characters (Pleco 3.2.26/Android) -->
 	<!ENTITY pleco-size-close "&#xEAC6;">
-	<!ENTITY pleco-hr "&#xEAC7;"><!-- followed by two octet parameters -->
+	<!ENTITY pleco-hr "&#xEAC7;"><!-- followed by four characters (Pleco 3.2.26/Android) -->
 ]>
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
@@ -114,7 +114,11 @@
 
 	<xsl:template name="out-p">
 		<xsl:param name="text"/>
-		<xsl:text>&pleco-block-open;@@</xsl:text>
+		<xsl:text>&pleco-block-open;</xsl:text>
+		<xsl:value-of select="codepoints-to-string(32)"/>
+		<xsl:value-of select="codepoints-to-string(36)"/>
+		<xsl:value-of select="codepoints-to-string(32)"/>
+		<xsl:value-of select="codepoints-to-string(32)"/>
 		<xsl:copy-of select="$text"/>
 		<xsl:text>&pleco-block-close;</xsl:text>
 	</xsl:template>
