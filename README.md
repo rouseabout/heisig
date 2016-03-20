@@ -104,6 +104,7 @@ File list
 | measure.xml     | Measure words
 | surname.xml     | Common surnames
 | exclamative.xml | Exclamative particles
+| transcription.xml| Transcription characters
 
 
 Known limitations
