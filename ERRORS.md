@@ -52,6 +52,12 @@ Another instance of this error occurs when a frame cites a primitive element tha
 | 2725   | 焕        | glowing        | sled dogs        | → Victorian lady
 | 2897   | 骄        | arrogant       | mirror image     | → angel
 
+Another instance of this error occurs where a frame is incorrectly described as using a primitive element.
+
+| Frame# | Character | Frame key word | Cites            | Comment
+|--------|-----------|----------------|------------------|--------
+| 34     | 白        | white          | bird             | the 白 primitive does not exist in the 鸟 bird frame.
+
 
 Sloppy citation
 ---------------
@@ -92,6 +98,7 @@ This error occurs where a frame has a primitive key word, and this key word is c
 | Frame# | Character | Frame Key word | Not-indexed key word
 |--------|-----------|----------------|---------------------
 | 15     | 目        | eye            | net
+| 195    | 宣        | proclaim       | sunrise, sunset
 
 
 Incorrect frame number

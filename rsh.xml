@@ -286,7 +286,7 @@
 
 <frame xsi:type="character" number="34" character="白" keyword="white">
 <strokes>5</strokes>
-<p><cite>sun</cite> ... <cite>a drop of</cite>. <info keyword="bird"/><count/></p>
+<p><cite>sun</cite> ... <cite>a drop of</cite>. <count/></p>
 <primitive>
 <p>Also known as: <pself>white</pself>. <pself>white bird</pself>. <pself>dove</pself>.</p>
 </primitive>
@@ -1497,6 +1497,9 @@
 <frame xsi:type="character" number="195" character="宣" keyword="proclaim">
 <strokes>9</strokes>
 <p><cite type="primitive">house</cite> ... <cite>daybreak</cite> ... <cite>sun</cite>. <count/></p>
+<primitive>
+<p>Also known as: <pself>sunrise, sunset</pself>.</p>
+</primitive>
 </frame>
 
 </page>
@@ -12280,7 +12283,7 @@
 
 <frame xsi:type="character" number="1798" character="恒" keyword="permanent">
 <strokes>9</strokes>
-<p><cite>state of mind</cite> ... <cite>sun</cite>. <info keyword="proclaim"/><count/></p>
+<p><cite>state of mind</cite> ... <cite>sunrise, sunset</cite>. <info keyword="proclaim"/><count/></p>
 </frame>
 
 <frame xsi:type="character" number="1799" character="悟" keyword="realize">
@@ -13586,7 +13589,7 @@
 
 <frame xsi:type="primitive" character="桼" keyword="Baron von Rumpelbrella">
 <strokes>11</strokes>
-<p><cite>Rumpelbrella</cite> ... <cite>snowflake</cite> ... <cite>tree</cite>. <count/></p>
+<p><cite type="primitive">umbrella</cite> ... <cite>snowflake</cite> ... <cite>tree</cite>. <info keyword="Rumpelbrella"/><count/></p>
 </frame>
 
 </page>
@@ -15543,7 +15546,7 @@
 
 <frame xsi:type="character" number="2359" character="榨" keyword="extract" pos="v.">
 <strokes>14</strokes>
-<p><cite>tree</cite> ... <cite>straight</cite>. <count/></p>
+<p><cite>tree</cite> ... <cite>strait</cite>. <count/></p>
 </frame>
 
 </page>
@@ -19377,12 +19380,12 @@
 <p><cite type="primitive">flower</cite> ... <cite>father’s sister</cite>. <count/></p>
 </frame>
 
-<frame xsi:type="character" number="2997" character="吩" keyword="in-">
+<frame xsi:type="character" number="2997" character="吩" keyword="in-(struct)">
 <strokes>7</strokes>
 <p><cite>mouth</cite> ... <cite>part</cite>. <count/></p>
 </frame>
 
-<frame xsi:type="character" number="2998" character="咐" keyword="-struct">
+<frame xsi:type="character" number="2998" character="咐" keyword="(in)-struct">
 <strokes>8</strokes>
 <p><cite>mouth</cite> ... <cite>pay</cite>. <count/></p>
 </frame>
