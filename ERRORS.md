@@ -125,52 +125,52 @@ This error occurs where a a frame is cited by its frame number, but the number i
 Incorrect stroke count
 ----------------------
 
-The Unihan Database <http://unicode.org/charts/unihan.html> and the Taiwan Ministry of Education website <http://stroke-order.learningweb.moe.edu.tw/> were used to detect stroke count discrepancies.
+《现代汉语通用笔顺规范》（1997）, the Unihan Database <http://unicode.org/charts/unihan.html> and the Taiwan Ministry of Education website <http://stroke-order.learningweb.moe.edu.tw/> were used to detect stroke count discrepancies.
 There are three kinds of errors.
 
 The first kind of error is where the stroke count is clearly wrong.
 
-| Frame# | Character | Frame key word     | RSH count | Unihan count | MoE count
-|--------|-----------|--------------------|-----------|--------------|----------
-| 1437   | 险        | perilous           | 10        | 9            | -
-| 1756   | 烫        | scald              | 16        | 10           | -
-| 2890   | 馋        | gluttonous         | 14        | 12           | -
-| 2901   | 骚        | disturb            | 2         | 12           | -
-| 2905   | 骡        | mule               | 17        | 14           | -
-| 2970   | 馅        | filling            | 16        | 11           | -
-| 2985   | 玻        | glass (front side) | 14        | 9            | 9
-| 3003   | 谭        | Tan                | 19        | 14           | -
-| 3007   | 冯        | Feng               | 12        | 5            | -
-| 3012   | 甸        | outlying areas     | 17        | 7            | 7
-| 3013   | 沧        | dark blue          | 13        | 7            | -
-| 3016   | 琼        | fine jade          | 19        | 12           | -
-| 3017   | 琳        | gem                | 14        | 12           | 12
-| 3018   | 钧        | 30 catties         | 12        | 9            | -
+| Frame# | Character | Frame key word     | RSH count | 现代汉语通用笔顺规范 count | Unihan count | MoE count
+|--------|-----------|--------------------|-----------|----------------------------|--------------| ---------
+| 1437   | 险        | perilous           | 10        | 9                          | 9            | -
+| 1756   | 烫        | scald              | 16        | 10                         | 10           | -
+| 2890   | 馋        | gluttonous         | 14        | 12                         | 12           | -
+| 2901   | 骚        | disturb            | 2         | 12                         | 12           | -
+| 2905   | 骡        | mule               | 17        | 14                         | 14           | -
+| 2970   | 馅        | filling            | 16        | 11                         | 11           | -
+| 2985   | 玻        | glass (front side) | 14        | 9                          | 9            | 9
+| 3003   | 谭        | Tan                | 19        | 14                         | 14           | -
+| 3007   | 冯        | Feng               | 12        | 5                          | 5            | -
+| 3012   | 甸        | outlying areas     | 17        | 7                          | 7            | 7
+| 3013   | 沧        | dark blue          | 13        | 7                          | 7            | -
+| 3016   | 琼        | fine jade          | 19        | 12                         | 12           | -
+| 3017   | 琳        | gem                | 14        | 12                         | 12           | 12
+| 3018   | 钧        | 30 catties         | 12        | 9                          | 9            | -
 
 The second kind concerns standardisation.
 For some frames, the book gives the stroke count derived from the Taiwan/ROC stroke order, instead of the Mainland/PRC stroke order.
 
-| Frame# | Character | Frame key word     | Book count | Unihan count | MoE count
-|--------|-----------|--------------------|------------|--------------|----------
-| 1732   | 熬        | stew               | 15         | 14           | 15
-| 2087   | 傲        | haughty            | 13         | 12           | 13
-| 2251   | 鼎        | old cooking pot    | 13         | 12           | 13
-| 3005   | 薛        | Xue                | 17         | 16           | 17
-| 3008   | 魏        | Wei                | 18         | 17           | 18
-| 3009   | 岳        | Yue                | 9          | 8            | 9
-| 3010   | 莉        | jasmine            | 11         | 10           | 11
-| 3015   | 娜        | na                 | 10         | 9            | 10
+| Frame# | Character | Frame key word     | Book count | 现代汉语通用笔顺规范 count | Unihan count | MoE count
+|--------|-----------|--------------------|------------|----------------------------|--------------|----------
+| 1732   | 熬        | stew               | 15         | 14                         | 14           | 15
+| 2087   | 傲        | haughty            | 13         | 12                         | 12           | 13
+| 2251   | 鼎        | old cooking pot    | 13         | 12                         | 12           | 13
+| 3005   | 薛        | Xue                | 17         | 16                         | 16           | 17
+| 3008   | 魏        | Wei                | 18         | 17                         | 17           | 18
+| 3009   | 岳        | Yue                | 9          | 8                          | 8            | 9
+| 3010   | 莉        | jasmine            | 11         | 10                         | 10           | 11
+| 3015   | 娜        | na                 | 10         | 9                          | 9            | 10
 
 The third kind, appears to be a stylistic difference chosen by the authors.
 
-| Frame# | Character | Frame key word     | Book count | Unihan count | MoE count
-|--------|-----------|--------------------|------------|--------------|----------
-| 420    | 肺        | lungs              | 9          | 8            | 8
-| 1688   | 沛        | copious            | 8          | 7            | 7
-| 1910   | 怡        | cheerful           | 9          | 8            | 8
-| 2121   | 宫        | palace             | 10         | 9            | -
-| 2856   | 帐        | tent               | 8          | 7            | -
-| 2855   | 胀        | bloated            | 9          | 8            | -
+| Frame# | Character | Frame key word     | Book count | 现代汉语通用笔顺规范 count | Unihan count | MoE count
+|--------|-----------|--------------------|------------|----------------------------|--------------|----------
+| 420    | 肺        | lungs              | 9          | 8                          | 8            | 8
+| 1688   | 沛        | copious            | 8          | 7                          | 7            | 7
+| 1910   | 怡        | cheerful           | 9          | 8                          | 8            | 8
+| 2121   | 宫        | palace             | 10         | 9                          | 9            | -
+| 2856   | 帐        | tent               | 8          | 7                          | 7            | -
+| 2855   | 胀        | bloated            | 9          | 8                          | 8            | -
 
 
 Editorial errors
